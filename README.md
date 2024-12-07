@@ -168,115 +168,91 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
     <ul>
       <li>Click "Add" to create the rule.</li>
     </ul>
+   <ul>
+      <li>Observe the ICMP traffic in Wireshark and the command line Ping activity, which should be interrupted due to the new rule.</li>
+   </ul>
+   <li>Re-enable ICMP Traffic and Observe the Result</li>
+    <ul>
+      <li>In the Azure Portal, navigate to the NSG associated with your Ubuntu VM.</li>
+   </ul>  
+   <ul>
+      <li>Locate the ICMP rule you created earlier and delete it to re-enable ICMP traffic.</li>
+   </ul>
+   <ul>
+      <li>Observe the ICMP traffic in Wireshark and the command line Ping activity, which should resume.</li>
+   </ul>
+    <li>Stop the Ping Activity</li>
+    <ul>
+      <li>In the Command Prompt or PowerShell, press Ctrl+C to stop the continuous ping activity.</li>
+   </ul>  
 </ol>
 
 
 
         
-<h2>Step 4: Implement Access Control Policies </h2>
+<h2>Step 4: Observing SSH Traffic </h2>
+In this section, we will use Wireshark to observe SSH traffic between the Windows 10 and Ubuntu VMs. We will establish an SSH connection and execute commands within the Ubuntu VM, monitoring the SSH traffic in Wireshark.
 <ol>
-   <li>Define User Roles: Assign specific roles to users based on their function in the lab.</li>
+   <li>Filter for SSH Traffic in Wireshark</li>
    <ul>
-      <li>Administrators: Full access to all VMs, Active Directory management, and Splunk configurations.</li>
+      <li>In Wireshark, update the filter to "ssh" to display only SSH traffic.</li>
+   </ul>
+  <li>Establish an SSH Connection</li>
+   <ul>
+      <li>If you don't have an SSH client installed on your Windows 10 VM, download and install one such as PuTTY: https://www.putty.org/ </li>
    </ul>
    <ul>
-      <li>Standard Users: Limited access to specific Windows or Linux machines for testing and learning purposes.</li>
+      <li>Open the SSH client and enter the private IP address of your Ubuntu VM.</li>
    </ul>
    <ul>
-      <li>Guests: Minimal access, primarily for observing system activity without making changes.</li>
+      <li>Connect to the Ubuntu VM using the appropriate username and password.</li>
    </ul>
    <ul>
-      <br></br>
-      <li>Create groups for specific roles (e.g., admin, user, guest) by running the following code:</li>
+      <li>Observe the SSH traffic in Wireshark as the connection is established.</li>
    </ul>
    <img src="https://i.imgur.com/RXI5kjZ.png" height="30%" width="30%" alt="script"/>
    <br/>
-   <li>Assign Permissions to Groups</li>
+   <li>Execute Commands and Observe SSH Traffic</li>
    </ul>
    <ul>
-      <li>Use the chmod and chown commands to set directory permissions.</li>
+      <li>In the SSH session, type the following command and press [Enter]: ls -lasth</li>
    </ul>
-   <img src="https://i.imgur.com/9c335UK.png" height="30%" width="30%" alt="script"/>
-   <li>Enforce Access Control</li>
    <ul>
-      <li>Verify permissions by switching to different users and testing to see if you can access the created directories.</li>
+      <li>Observe the SSH traffic in Wireshark.</li>
    </ul>
-   <img src="https://i.imgur.com/pY3M8ON.png" height="30%" width="30%" alt="script"/>
+   <ul>
+      <li>Type the following command and press [Enter]: touch hi.txt</li>
+   </ul>
+      <ul>
+      <li>Observe the SSH traffic in Wireshark.</li>
+   </ul>
+   <li>Close the SSH Connection</li>
+   <ul>
+      <li>In the SSH session, type exit and press [Enter] to close the connection.</li>
+   </ul>
+    <ul>
+      <li>Observe the SSH traffic in Wireshark as the connection is closed.</li>
+   </ul>
 </ol>
-<h2>Step 5: Automate Password Policies </h2>
+<h2>Step 5: Observing DNS Traffic </h2>
+In this section, we will use Wireshark to observe DNS traffic within the Windows 10 VM. We will use the nslookup command to query the IP addresses of two websites and monitor the DNS traffic in Wireshark.
 <ol>
-   <li>Password Policy: Configure strong password requirements on all systems</li>
+   <li>Filter for DNS Traffic in Wireshark</li>
    <ul>
-      <li>Minimum length: 12 characters.</li>
+      <li>In Wireshark, update the filter to "dns" to display only DNS traffic.</li>
+   </ul>
+   <li>Query IP Addresses Using nslookup</li>
+   <ul>
+      <li>Open Command Prompt or PowerShell in the Windows 10 VM.</li>
    </ul>
    <ul>
-      <li>Must include uppercase, lowercase, numbers, and special characters.</li>
+      <li>Type the following command and press [Enter]: nslookup ufc.com</li>
    </ul>
    <ul>
-      <li>Prevent the reuse of the last five passwords.</li>
-   </ul>
-   <ul>
-      <li>Implement password expiration policies: Set passwords to expire every 60 days on all machines (via Group Policy for Windows and /etc/login.defs for Linux).</li>
-   </ul>
-   <li>Password Requirements</li>
-   <ul>
-      <li>Modify /etc/login.defs for system-wide policies by running the following:</li>
-      <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
-      <br/>
-   </ul>
-   <ul>
-      <li>Set these parameters:
-         <br/>
-      </li>
-      <ul>
-         <li>PASS_MAX_DAYS: Sets the maximum number of days a user can use their current password before being required to change it.</li>
-      </ul>
-      <ul>
-         <li>PASS_MIN_DAYS: Defines the minimum number of days a user must wait before they can change their password again after setting it.</li>
-      </ul>
-      <ul>
-         <li>PASS_MIN_LEN: Sets the minimum length for user passwords to 12 characters.</li>
-      </ul>
-      <ul>
-         <li>PASS_WARN_AGE: Sends a warning to the user 7 days before their password is set to expire.</li>
-      </ul>
-      <img src="https://i.imgur.com/lhys6XV.png" height="25%" width="25%" alt="script"/>
-   </ul>
-   <li>Implement Account Lockout:</li>
-   <ul>
-      <li>Edit /etc/pam.d/common-auth to lock accounts after three failed login attempts by running the following:</li>
-      <img src="https://i.imgur.com/mdQCxCn.png" height="25%" width="25%" alt="script"/>
-      <br/>
-      <ul>
-         <li>Add the following line of code:</li>
-         <img src="https://i.imgur.com/nsauMaI.png" height="40%" width="40%" alt="script"/>
-         <br/>
-         <li>auth required pam_tally2.so: Specifies the use of the pam_tally2 module, which keeps a tally of failed login attempts for user accounts.
-         <li>deny = 3: Sets a limit of 3 failed login attempts before the account is locked.</li>
-         <li>unlock_time=600: Configures the lockout period to 600 seconds (10 minutes). After this time, the account is automatically unlocked.</li>
-         <li>onerr=fail: Ensures that if there’s an error in the PAM module, access is denied by default.</li>
-         <li>audit: Enables logging of authentication attempts, including both successful and failed logins.</li>
-         </li>
-      </ul>
+      <li>Observe the DNS traffic in Wireshark as the IP address for ufc.com is resolved.</li>
    </ul>
 </ol>
 
-<h2>Step 6: Monitor User Activity </h2>
-<ol>
-   <li>Enable Audit Logging</li>
-   <ul>
-      <li>Install auditd:</li>
-   </ul>
-   <br/>
-   <img src="https://i.imgur.com/tBsG67J.png" height="40%" width="40%" alt="script"/>
-   <br/>
-   <li>Start and enable the service:</li>
-   <img src="https://i.imgur.com/TWlGzOR.png" height="40%" width="40%" alt="script"/>
-   <br/>
-   <li>Define Audit Rules</li>
-   <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
-   <br/>
-   </li></ul>
-   <h2>Step 7: Conclusion</h2>
- In this project, I developed an automated user management solution for Linux, covering onboarding, access control, and offboarding. I created a Bash script to automate account creation with secure default settings, restricted SSH access based on roles, and implemented group-based access controls. The project also includes login monitoring for proactive security and regular user access reviews, ensuring that only authorized users have access. This demonstrates my skills in Linux administration, automation, and security, showcasing essential competencies for a System Administrator role.     
+   <h2>Step 6: Conclusion</h2>
+ Through this project, we successfully leveraged Wireshark on Azure VMs to monitor and analyze various types of network traffic, including RDP, DNS, DHCP, SSH, and ICMP. This hands-on setup provided valuable insights into common traffic patterns, allowing us to observe and understand these protocols in action, troubleshoot potential issues, and strengthen network security awareness in a cloud environment.     
 </ol>
