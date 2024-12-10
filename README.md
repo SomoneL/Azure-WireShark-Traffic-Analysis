@@ -164,14 +164,35 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
 <ol>
    <li>Connect to Windows 10 VM and Install Wireshark</li>
    <ul>
-      <li>Use Remote Desktop to connect to your Windows 10 Virtual Machine.</li>
+      <li>Use Remote Desktop to connect to your Windows 10 Virtual Machine. From the left-hand menu Select "Virtual machines" > Select the Windows 10 VM you created > Select "Start" to run it. </li>
    </ul>
+    <br>
+      <img src="https://imgur.com/NTA1eKx.png" height="40%" width="40%" alt="script"/>
+   <br/>
+    <ul>
+      <li>Next, select "Connect", and "Download RDP file" run the downloaded file, and sign into the VM. </li>
+   </ul>
+    <br>
+      <img src="https://imgur.com/Lx5Gd4s.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <br>
+      <img src="https://imgur.com/eQj25xa.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <br>
+      <img src="https://imgur.com/5hL700Y.png" height="40%" width="40%" alt="script"/>
+   <br/>
     <ul>
       <li>Within your Windows 10 Virtual Machine, download Wireshark from the official website: https://www.wireshark.org/#downloadLink </li>
    </ul>
     <ul>
       <li>Install Wireshark following the installation wizard instructions.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/Wbdv8Qr.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <br>
+      <img src="https://imgur.com/PWM93zp.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <li>Filter and Observe ICMP Traffic</li>
     <ul>
       <li>Open Wireshark and start a new capture.</li>
