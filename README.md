@@ -20,29 +20,46 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
   
    <li>Create a Resource Group</li>
    <ul>
-      <li>Sign in to the Azure Portal.</li>
+      <li>Sign in to the Azure Portal after creating an account here selecting "Try Azure for free": 
    </ul>
+   
+   [Link Here.](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account/search?ef_id=_k_CjwKCAiA6t-6BhA3EiwAltRFGKPFQZAFQkCKMF_0KQgrv9Ral7t4-GQ74Hnqm972Ou9o2iMy41JciBoCzQ0QAvD_BwE_k_&OCID=AIDcmmfq865whp_SEM__k_CjwKCAiA6t-6BhA3EiwAltRFGKPFQZAFQkCKMF_0KQgrv9Ral7t4-GQ74Hnqm972Ou9o2iMy41JciBoCzQ0QAvD_BwE_k_&gad_source=1&gclid=CjwKCAiA6t-6BhA3EiwAltRFGKPFQZAFQkCKMF_0KQgrv9Ral7t4-GQ74Hnqm972Ou9o2iMy41JciBoCzQ0QAvD_BwE)
+      </li>
    <ul>
-      <li>In the left-hand menu, click on "Resource Groups."</li>
+      <li>Once signed in, in the left-hand menu, click on "Resource Groups."</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/d995KP2.png" height="40%" width="40%" alt="script"/>
+   <br/>  
    <ul>
-      <li>Click "Add" to create a new Resource Group.</li>
+      <li>Click "Create" to create a new Resource Group.</li>
    </ul>
    <ul>
       <li>Fill in the required details, including a unique name and your preferred region.</li>
    </ul>
    <ul>
-      <li>Click "Review + create" and then "Create" to confirm.</li>
+      <li>Click "Review + create", wait for passed validation, then click "Create" to confirm.</li>
    </ul>
-
+   <br>
+      <img src="https://imgur.com/PzsbuzU.png" height="40%" width="40%" alt="script"/>
+   <br/>  
+   <br>
+      <img src="https://imgur.com/Z9VSNDJ.png" height="40%" width="40%" alt="script"/>
+   <br/>  
   
    <li>Create a Windows 10 Virtual Machine (VM)</li>
    <ul>
       <li>In the Azure Portal, click on "Create a resource" in the left-hand menu.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/Mm9gVM5.png" height="40%" width="40%" alt="script"/>
+   <br/> 
    <ul>
-      <li>Search for "Windows 10" and select the appropriate VM image.</li>
+      <li>Search for "Windows 10" and select the drop down arrow next to "Create" and select the appropriate VM image: "Windows 10 Pro, version 22H2" </li>
    </ul>
+   <br>
+      <img src="https://imgur.com/FFSdT4A.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <ul>
       <li>Click "Create" to start the VM creation process.</li>
    </ul>
@@ -52,15 +69,33 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
      <ul>
       <li>Under the "Resource Group" section, select the Resource Group created earlier.</li>
    </ul>
-     <ul>
-      <li>For the Virtual Network (Vnet) and Subnet, let the VM create a new one.</li>
+    <br>
+      <img src="https://imgur.com/IZWKHXX.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <ul>
+      <li>Be sure to set the details for the "Administrator account" so you can sign in. We used the credentials, user:helpdeskadmin pass: Password123! </li>
    </ul>
+      <br>
+      <img src="https://imgur.com/P3dN4Nj.png" height="40%" width="40%" alt="script"/>
+   <br/>
+        <ul>
+      <li>Click 'Next' , leave the "Disks" tab as is.</li>
+   </ul>
+     <ul>
+      <li>On the "Networking" tab For the Virtual Network (Vnet) and Subnet, let the VM create a new one.</li>
+   </ul>
+      <br>
+      <img src="https://imgur.com/hsEOaqr.png" height="40%" width="40%" alt="script"/>
+   <br/>
      <ul>
       <li>Complete the remaining VM configuration settings as needed.</li>
    </ul>
      <ul>
       <li>Click "Review + create" and then "Create" to confirm.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/I4UirZQ.png" height="40%" width="40%" alt="script"/>
+   <br/>
 
    
  <li>Create a Linux (Ubuntu) VM</li>
