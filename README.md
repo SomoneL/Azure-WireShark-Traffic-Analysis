@@ -201,25 +201,25 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
       <img src="https://imgur.com/Pd2pHLU.png" height="40%" width="40%" alt="script"/>
    <br/>
     <ul>
-      <li>Set the filter to "icmp" to display only ICMP traffic. On the "Apply a display filter" box, type "ICMP" and click Enter. </li>
+      <li>Set the filter to "icmp" to display only ICMP traffic. On the "Apply a display filter" box, type "ICMP" and click Enter. Observe the analysis window is blank and not displaying any filtered data. </li>
    </ul>
    <br>
       <img src="https://imgur.com/Pd2pHLU.png" height="40%" width="40%" alt="script"/>
    <br/>
    <br>
-      <img src="https://imgur.com/tQGRVkI.png" height="40%" width="40%" alt="script"/>
+      <img src="https://imgur.com/UBa30cz.png" height="40%" width="40%" alt="script"/>
    <br/>
     <ul>
       <li>Retrieve the private IP address of the Ubuntu VM from the Azure Portal. From the left-hand menu select Virtual machines > Select your Ubuntu VM > your private IP should appear under the VM properties. Ours is: 10.0.0.5 </li>
    </ul>
     <ul>
-      <li>Open Command Prompt or PowerShell in the Windows 10 VM and ping the Ubuntu VM using the command: 'ping <Ubuntu_VM_IP>'</li>
+      <li>Open Command Prompt or PowerShell in the Windows 10 VM and ping the Ubuntu VM using the command: 'ping <Ubuntu_VM_IP>'. </li>
    </ul>
    <br>
-      <img src="https://imgur.com/tQGRVkI.png" height="40%" width="40%" alt="script"/>
+      <img src="https://imgur.com/cPiAApL.png" height="40%" width="40%" alt="script"/>
    <br/>
     <ul>
-      <li>Observe the ping requests and replies within Wireshark.</li>
+      <li>Observe the ping requests and replies within Wireshark displaying the reply pings from the Windows 10 VM to the Ubuntu VM.</li>
    </ul>
    <li>Ping a Public Website and Observe Traffic</li>
     <ul>
@@ -228,6 +228,9 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
        <ul>
       <li>Observe the ICMP traffic between the Windows 10 VM and the public website in Wireshark.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/XyfjGFj.png" height="40%" width="40%" alt="script"/>
+   <br/
   <li>Control ICMP Traffic Using Network Security Group</li>
     <ul>
       <li>Initiate a perpetual/non-stop ping from your Windows 10 VM to your Ubuntu VM using the command: 'ping -t <Ubuntu_VM_IP>'</li>
