@@ -10,7 +10,7 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
    <li>Various Command-Line Tools</li>
    <li>Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)</li>
    <li>Wireshark (Protocol Analyzer)</li>
-   <li>Windows 10 (21H2)</li>
+   <li>Windows 10 (22H2)</li>
    <li>Ubuntu Server 20.04</li>
   
 </ol>
@@ -78,7 +78,7 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
       <br>
       <img src="https://imgur.com/P3dN4Nj.png" height="40%" width="40%" alt="script"/>
    <br/>
-        <ul>
+   <ul>
       <li>Click 'Next' , leave the "Disks" tab as is.</li>
    </ul>
      <ul>
@@ -103,7 +103,7 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
       <li>In the Azure Portal, click on "Create a resource" in the left-hand menu.</li>
    </ul>
    <ul>
-      <li>Search for "Ubuntu" and select the appropriate VM image.</li>
+      <li>Search for "Ubuntu" and select the appropriate VM image: Ubuntu Server 20.04 LTS</li>
    </ul>
    <ul>
       <li>Click "Create" to start the VM creation process.</li>
@@ -114,20 +114,38 @@ Description: In this project, we’ll set up Azure Virtual Machines to perform n
      <ul>
       <li>Under the "Resource Group" section, select the Resource Group created earlier.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/crqvKAj.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <ul>
+      <li>Be sure to select "Password" for the "Authentication Type" and set the details for the "Administrator account" so you can sign in. We used the credentials, user:helpdeskadmin pass: Password123!</li>
+   </ul>
+   <br>
+      <img src="https://imgur.com/cqhK6tl.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <ul>
+      <li>Click 'Next' , leave the "Disks" tab as is.</li>
+   </ul>
      <ul>
       <li>For the Virtual Network (Vnet) and Subnet, select the one created while setting up the Windows 10 VM.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/bApiQmT.png" height="40%" width="40%" alt="script"/>
+   <br/>
      <ul>
       <li>Complete the remaining VM configuration settings as needed.</li>
    </ul>
      <ul>
       <li>Click "Review + create" and then "Create" to confirm.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/sTNpMIc.png" height="40%" width="40%" alt="script"/>
+   <br/>
 
 
  <li>Observe Your Virtual Network within Network Watcher</li>
    <ul>
-      <li>In the Azure Portal, click on "Network Watcher" in the left-hand menu.</li>
+      <li>In the Azure Portal, click on "All services" in the left-hand menu > "Monitor" tab > Under "Monitoring tools" select "Network Watcher". </li>
    </ul>
    <ul>
       <li>Select the Virtual Network you created earlier.</li>
