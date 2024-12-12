@@ -311,15 +311,22 @@ In this section, we will use Wireshark to observe SSH traffic between the Window
    <ul>
       <li>Open the SSH client and enter the private IP address of your Ubuntu VM.</li>
    </ul>
+     <br>
+      <img src="https://imgur.com/rQscobv.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <ul>
       <li>Connect to the Ubuntu VM using the appropriate username and password.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/HwpwWb2.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <ul>
       <li>Observe the SSH traffic in Wireshark as the connection is established.</li>
    </ul>
-   <img src="https://i.imgur.com/RXI5kjZ.png" height="30%" width="30%" alt="script"/>
-   <br/>
-   <li>Execute Commands and Observe SSH Traffic</li>
+     <br>
+      <img src="https://imgur.com/jXU7hU4.png" height="40%" width="40%" alt="script"/>
+   <br/> 
+   <li>Execute Command and Observe SSH Traffic</li>
    </ul>
    <ul>
       <li>In the SSH session, type the following command and press [Enter]: ls -lasth</li>
@@ -327,12 +334,10 @@ In this section, we will use Wireshark to observe SSH traffic between the Window
    <ul>
       <li>Observe the SSH traffic in Wireshark.</li>
    </ul>
-   <ul>
-      <li>Type the following command and press [Enter]: touch hi.txt</li>
-   </ul>
-      <ul>
-      <li>Observe the SSH traffic in Wireshark.</li>
-   </ul>
+   <br>
+      <img src="https://imgur.com/2zdaKmV.png" height="40%" width="40%" alt="script"/>
+   <br/> 
+  
    <li>Close the SSH Connection</li>
    <ul>
       <li>In the SSH session, type exit and press [Enter] to close the connection.</li>
@@ -348,6 +353,9 @@ In this section, we will use Wireshark to observe DNS traffic within the Windows
    <ul>
       <li>In Wireshark, update the filter to "dns" to display only DNS traffic.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/5CGrv1F.png" height="40%" width="40%" alt="script"/>
+   <br/> 
    <li>Query IP Addresses Using nslookup</li>
    <ul>
       <li>Open Command Prompt or PowerShell in the Windows 10 VM.</li>
@@ -358,6 +366,9 @@ In this section, we will use Wireshark to observe DNS traffic within the Windows
    <ul>
       <li>Observe the DNS traffic in Wireshark as the IP address for ufc.com is resolved.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/ZkplSI5.png" height="40%" width="40%" alt="script"/>
+   <br/> 
 </ol>
 
    <h2>Step 6: Conclusion</h2>
