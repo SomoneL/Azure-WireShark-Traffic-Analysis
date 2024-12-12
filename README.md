@@ -230,20 +230,26 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
    </ul>
    <br>
       <img src="https://imgur.com/XyfjGFj.png" height="40%" width="40%" alt="script"/>
-   <br/
+   <br/>
   <li>Control ICMP Traffic Using Network Security Group</li>
     <ul>
       <li>Initiate a perpetual/non-stop ping from your Windows 10 VM to your Ubuntu VM using the command: 'ping -t <Ubuntu_VM_IP>'</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/zEQb1Ag.png" height="40%" width="40%" alt="script"/>
+   <br/>
     <ul>
-      <li>In the Azure Portal, navigate to the Network Security Group (NSG) associated with your Ubuntu VM.</li>
+      <li>In the Azure Portal, navigate to the Network Security Group (NSG) associated with your Ubuntu VM. Select your Ubuntu VM > Networking > Network settings to see your Network security group.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/Gse2AYk.png" height="40%" width="40%" alt="script"/>
+   <br/>
     <ul>
-      <li>Click on "Inbound security rules" in the left menu.</li>
+      <li>Click on "Inbound security rules" in the left menu. Click on the "+ Add" button in the top menu.</li>
    </ul>   
-    <ul>
-      <li>Click on the "+ Add" button in the top menu.</li>
-   </ul> 
+   <br>
+      <img src="https://imgur.com/3mAPsx8.png" height="40%" width="40%" alt="script"/>
+   <br/>
     <ul>
       <li>Configure the new rule as follows:</li>
       <ul><li>Source: Any</li></ul>
@@ -251,7 +257,7 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
       <ul><li>Destination: Any</li></ul>
       <ul><li>Service: Custom</li></ul>
       <ul><li>Destination Port Ranges: *</li></ul>
-      <ul><li>Protocol: ICMP</li></ul>
+      <ul><li>Protocol: ICMPv4</li></ul>
       <ul><li>Action: Deny</li></ul>
    </ul> 
     <ul>
@@ -260,6 +266,9 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
    <ul>
       <li>Observe the ICMP traffic in Wireshark and the command line Ping activity, which should be interrupted due to the new rule.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/u0MflCz.png" height="40%" width="40%" alt="script"/>
+   <br/>     
    <li>Re-enable ICMP Traffic and Observe the Result</li>
     <ul>
       <li>In the Azure Portal, navigate to the NSG associated with your Ubuntu VM.</li>
