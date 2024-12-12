@@ -263,6 +263,9 @@ In this section, we will use Wireshark to observe ICMP traffic between the Windo
     <ul>
       <li>Click "Add" to create the rule.</li>
     </ul>
+   <br>
+      <img src="https://imgur.com/xfJqDZ3.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <ul>
       <li>Observe the ICMP traffic in Wireshark and the command line Ping activity, which should be interrupted due to the new rule.</li>
    </ul>
@@ -295,10 +298,16 @@ In this section, we will use Wireshark to observe SSH traffic between the Window
    <ul>
       <li>In Wireshark, update the filter to "ssh" to display only SSH traffic.</li>
    </ul>
+   <br>
+      <img src="https://imgur.com/RhHdt3q.png" height="40%" width="40%" alt="script"/>
+   <br/>
   <li>Establish an SSH Connection</li>
    <ul>
       <li>If you don't have an SSH client installed on your Windows 10 VM, download and install one such as PuTTY: https://www.putty.org/ </li>
    </ul>
+   <br>
+      <img src="https://imgur.com/GrPixFP.png" height="40%" width="40%" alt="script"/>
+   <br/>
    <ul>
       <li>Open the SSH client and enter the private IP address of your Ubuntu VM.</li>
    </ul>
